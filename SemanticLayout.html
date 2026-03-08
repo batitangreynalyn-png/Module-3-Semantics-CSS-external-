@@ -1,0 +1,124 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML5, HTML 5, Semantics">
+    <title>CSS Layout with Semantic HTML</title>
+
+    <style>
+        :root {
+            --dark-blue: #222059;
+            --medium-blue: #0A5DA6;
+            --light-blue: #29A7D9;
+            --white: #FFFFFF;
+            --green: #027333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--white);
+            color: var(--dark-blue);
+        }
+
+        header {
+            background: var(--medium-blue);
+            padding: 20px;
+            text-align: center;
+            color: var(--white);
+            font-size: 24px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: var(--light-blue);
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        main {
+            background: var(--green);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        aside {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CSS Layout with Semantic HTML</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h2>Main Content</h2>
+            <p>This is an example of a flexible layout using CSS Grid applied to a semantic HTML Structure.</p>
+        </main>
+
+        <aside>
+            <h3>Sidebar</h3>
+            <p>Additional content or links go here.</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 My Semantic Page. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
